@@ -1,0 +1,63 @@
+.artigo{
+    width: 80%;
+    margin: 30px auto;
+    overflow: hidden;
+    clear: both;
+    padding: 20px;
+    background-color: rgb(230, 230, 236);
+    border-radius: 5px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.texto{
+    margin: 40px auto;
+    display: block;
+    position: relative;
+    font-family: 'Dosis', sans-serif;
+}
+.paragrafo{
+    text-align: justify;
+    font-family: 'Merriweather', serif;
+    font-size: 13pt;
+}
+
+.figuraD, .figuraE{
+    width: 20%;
+    box-sizing: border-box;
+    margin: 5px;
+}
+
+.figuraD{
+    float: right;
+}
+
+.figuraE{
+    float: left;
+}
+
+.imagem{
+    position: relative;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.fig{
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,.5);
+}
+
+.fcap{
+    font-size: 8pt;
+    color: rgba(0,0,0,.7);
+}
+
+@media(max-width: 768px){
+    .artigo{
+         width: 95%;
+         padding: 0;
+    }
+}

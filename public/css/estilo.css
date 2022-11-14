@@ -1,0 +1,582 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('https://fonts.googleapis.com/css?family=Dosis|Merriweather');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+a{
+    text-decoration: none;
+}
+
+.verMais{
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 15px;
+    margin: 10px auto;
+    color: #fff;
+    border: none;
+    display: block;
+    cursor: pointer;
+}
+
+.green:hover {
+    background-color: #48E68B;
+}
+
+.verMais:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0px 1px 0px 0px;
+}
+
+button:focus{
+    outline-style: none;
+}
+
+.blue {
+    background-color: #55acee;
+    box-shadow: 0px 5px 0px 0px #3C93D5;
+}  
+
+.green{
+    background-color: #2ecc71;
+    box-shadow: 0px 5px 0px 0px #15B358;
+}
+
+.red {
+    background-color: #e74c3c;
+    box-shadow: 0px 5px 0px 0px #CE3323;
+  }
+  
+.red:hover {
+background-color: #FF6656;
+}  
+
+.noticia{
+    width: 100%;
+}
+
+.paginacao{
+    width: 100%;
+    display: block;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.firstLast, .page, .pageSelected{
+    margin-right: -4.5px;
+    border: .5px solid rgb(167, 167, 212);
+    padding: 9px;
+    font-size: 10pt;
+    border-radius: 2px;
+}
+
+.firstLast, .page{
+    color: black;
+    background-color: rgb(200, 230, 250);
+}
+
+.firstLast{
+    background-color: rgb(166, 192, 248);
+}
+
+.page:hover{
+    background-color: rgb(166, 192, 248);
+    color: rgb(2, 2, 61);
+}
+
+.pageSelected{
+    background-color: rgb(15, 15, 94);
+    color: white;
+    cursor: pointer;
+}
+
+.container{
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.cabecalho{
+    background-image: url(../img/ordem-demolay.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 230px;
+    background-position: 0 50px;
+    height: 280px;
+}
+
+.barraSuperior{
+    background-color: #3cba54;
+    width: 100%;
+    height: 51px;
+    display: table;
+    overflow: hidden; 
+}
+
+.barraSuperior div.cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.barraSuperior div.cell div.nome{
+    position: absolute;
+    vertical-align: middle;
+    padding-top: 8px;
+    right: 10px;
+    height: 40px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.online{
+    color: green;
+}
+
+.sair{
+    position: absolute;
+    right: 10px;
+    top: 48px;
+    display: none;
+    background-color: #1f1a22;
+    height: 100px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.sair div{
+    border: 2px solid white;
+    padding: 10px;
+    width: 30px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2px;
+    background-color: rgb(6, 23, 54);
+    border-radius: 100%;  
+    display: inline-block;
+}
+
+.sair label{
+    max-width: 100px;
+    color: white;
+}
+
+.sair button{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.sair span{
+    float: right;
+    margin-right: 5px;
+    margin-top: -15px;
+    font-size: 20px;
+    color: #1f1a22;
+}
+
+.nome:hover .sair{
+    display: block;
+}
+
+.icos{
+    margin: 4px;
+}
+
+.flutuar{
+    float: left;
+}
+
+.bemvindo{
+    text-transform: uppercase;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 8px black;
+    font-family: 'Titillium Web', sans-serif;
+    pointer-events: none;
+}
+
+.fa{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    transition: all .1s;
+    cursor: pointer;
+}
+
+.fa:hover{
+    color: white;
+    text-shadow: 1px 2px 3px black;
+    transform: scale(1.1);
+}
+
+@keyframes mudar{
+    from {
+        opacity: 0;
+        transform: translate3d(0,-60px,0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+.modal-container, .modal-ouvidoria{
+    display: none;
+    top: 0;
+    position: fixed;
+    background-color: rgba(0,0,0,.7);
+    z-index: 2000;
+}
+
+.modal, .modal-ouvidoria{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ouvidoria{
+    width: 300px;
+    padding: 15px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 20px;
+}
+
+.btn-ouvidoria{
+    padding: 12px;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    box-shadow: none;
+}
+
+.form{
+    animation: mudar .3s;
+    position: relative;
+    width: 60%;
+    max-width: 400px;
+    min-width: 310px;
+    background-color: #3cba54;
+    padding: 20px;
+    border-radius: 3px;
+}
+
+.close{
+    border-radius: 50%;
+    background-color: #114219;
+    color: white;
+    border: .5px solid white;
+    position: absolute;
+    line-height: 0;
+    top: -5px;
+    right: -5px;
+}
+
+.close i{
+    font-size: 20px;
+}
+
+.form div{
+    width: 95%;
+    margin: 0 auto;
+    text-align: right;
+}
+
+.login{
+    text-align: center;
+    margin: 10px;
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+}
+
+.caixaTexto{
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    font-size: 16pt;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.caixaTexto:hover{
+    background-color: rgb(253, 244, 244);
+}
+
+.entrar{
+    padding: 7px;
+    background-color: rgb(230, 215, 215);
+    border-radius: 10px;
+    border: 1px solid white;
+    margin: 7px;
+    font-size: 17px;
+    color: black;
+    box-shadow: 2px 2px 3px black;
+    transition: all .6s;
+}
+
+.entrar:focus{
+    outline-style: none;
+}
+
+.entrar:active{
+    background-color: rgb(214, 169, 169);
+    box-shadow: none;
+}
+
+.barra2{
+    background-color: #3cba54;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    min-height: 40px;
+}
+
+.menu{
+    overflow: hidden;
+    margin: 0 auto;
+    text-align: center;
+}   
+
+.aba{
+    list-style: none;
+    text-shadow: 1px 1px 5px black;
+    color: white;
+    padding: 12px;
+    border-right: solid 1px rgb(102, 101, 101);
+    font-weight: bold;
+    cursor: pointer;
+    transition: .4s;
+    background-color: #3cba54; 
+    display: inline-block;
+}
+
+.checked{
+    color: rgb(250, 221, 221);
+}
+
+.aba:hover{
+    color: rgb(250, 221, 221);
+}
+
+.aba:hover .aba2{
+    display: block;
+    transition: all .7s;
+}
+
+.menu2{
+    position: absolute;  
+    margin-top: 12px;
+    margin-left: -12px;
+    z-index: 1;
+}
+
+.aba2{
+    float: none;
+    text-shadow: none;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    background-color: #357440;
+    text-align: left;
+    display: none;
+}
+
+.aba2:hover{
+    color: #bcb4c1;
+}
+
+.conteudo{
+    width: 90%;
+    margin: 20px auto;
+    border-top: solid 6px #31a747;
+}
+
+.page-title{
+    font-size: 14pt;
+    color: rgb(1, 37, 1);
+    padding: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(255, 255, 0, .49);
+}
+
+.gce-img{
+    height: 400px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box-img span{
+    display: block;
+    margin: 0 auto;
+}
+
+.box-img{
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 10px !important;
+    min-height: 450px !important;
+    background-color: #2f81a128 !important;
+}
+
+#incorreto{
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    border: 1px solid red;
+    border-radius: 5px;
+    background-color: white;
+    height: 0;
+    color: red;
+    opacity: 0;
+    transition: all .5s;
+    font-size: 0;
+}
+
+.rodape{
+    clear: both;
+    width: 100%;
+    text-align: center;
+    background-color: #1f1a22;
+    color: #bcb4c1;
+    padding: 8px;
+    box-sizing: border-box;
+    display: table;
+    height: 100px;
+}
+
+.rodape .dados{
+    vertical-align: middle;
+    display: table-cell;
+    padding-top: 20px;
+}
+
+.rodape .dados div strong{
+    color: white;
+}
+
+.rodape .dados div{
+    color: rgb(111, 178, 187);
+    font-size: 10pt;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.barra-menu{
+    display: none;
+    position: relative;
+}
+.barra-menu button{
+    background-color: transparent;
+    padding: 3px;
+    margin: 2px;
+    margin-right: 10px;
+    border-radius: 3px;
+    border: none;
+    position: absolute;
+}
+.barra-menu button i{
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+#menu{
+    display: none;
+}
+
+
+/* SMALL DEVICES - TABLETS E DESKTOPS*/
+
+
+@media screen and (max-width: 950px){
+    .cabecalho{
+        background-image: url('../img/ordem-demolay960px.jpg');
+    }
+}
+@media screen and (max-width: 870px){
+    .conteudo{
+        width: 95%;
+    }
+    .page-title{
+        font-size: 12pt;
+    }
+    .barra-menu{
+        display: block;
+    }
+    .menu{
+        width: 100%;
+        max-height: 0;
+        margin-top: -100%;
+        transition: all .4s;
+        overflow: hidden;
+    }
+
+    #menu:checked ~ .menu{
+        max-height: 100%;
+        margin-top: 0;
+    }
+    .aba{
+        width: 100%;
+        padding: 0;
+        line-height: 42px;
+        border-right: none;
+        float: none;
+        text-align: left;
+        text-indent: 35%;
+        border-bottom: solid 1px rgb(0, 0, 0);
+    }
+    .aba2{
+        padding: 0;
+        width: 100%;
+        border-top: 1px solid rgb(66, 56, 56);
+    }
+    .menu2{
+        margin-top: 0;
+        margin-right: -12px;
+        position: static;
+        overflow: hidden;
+        display: block;
+        max-height: 0;
+        transition: all 0.5s;
+    }
+    .aba:hover .menu2{
+        height: auto;
+        max-height: 200px;
+    }
+    .cabecalho{
+        background-image: url('../img/ordem-demolay768px.jpg');
+        background-size: 100% 160px;
+        background-position: 0 43px;
+        height: 203px;
+    }
+    .bemvindo{
+        font-size: 1em;
+    }      
+}
+@media screen and (max-width: 480px){
+    .cabecalho{
+        background-image: url('../img/ordem-demolay480px.jpg');
+        background-size: 100% 130px;
+        background-position: 0 37px;
+        height: 167px;
+    }
+    .bemvindo{
+        font-size: .7em;
+    }    
+}

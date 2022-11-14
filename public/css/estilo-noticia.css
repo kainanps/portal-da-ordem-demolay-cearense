@@ -1,0 +1,113 @@
+#conteudoNoticia, #conteudoEvento{
+    display: none;
+}
+
+#carregando{
+    background: url("http://tbcinfo.com.br/uteis/carregando2.gif") no-repeat center;
+    background-size: 200px;
+    position: relative;
+    width: 100%;
+    display: block;
+    height: 200px;
+}
+
+.caixa{
+    min-height: 150px;
+    z-index: 0;
+    box-shadow: 0px 0px 4px .5px rgba(0,0,0,.2);
+    background-color: rgba(0, 255, 0, 0.062);
+    text-overflow: ellipsis;
+    border-radius: 20px;
+}
+
+.box {
+    background:#FFF;
+    font-weight: bold;
+    border-radius:5px;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    text-align: center;
+    padding:0 10px 10px;
+    border-top: 2px dashed black;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+    transition: all .5s;
+}
+
+.box:hover{
+    background-color: transparent;
+    color: transparent;
+}
+  
+.date #daymonth {
+    color:#454545;
+    font-size: .8em;
+    padding:5px 0;
+}
+.date #year {
+    color:#C1C1C1;
+    font-size: .8em;
+}
+
+.imagemNoticia{
+    width: 100%; 
+    height: 270px;
+}
+
+.imagemNoticiaOpen{
+    padding: 10px;
+    max-width: 70%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.imagemNoticiaOpen figcaption{
+    font-size: 6pt;
+}
+
+.imagemNoticiaOpen img{
+    position: relative;
+    max-width: 100%;
+}
+
+.caixa p{
+    padding: 15px;
+    text-indent: 35px;
+}
+
+.caixa h3.open{
+    padding-top: 15px;
+}
+
+.caixa h3{
+    text-align: center;
+}
+
+.caixa p{
+    text-align: justify;
+}
+
+.incorreto{
+    background-color: rgba(248, 248, 121, .8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0,0,0,.5);
+    color: red;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: absolute;
+    margin-left: -100%;
+}
+
+@media(min-width: 640px) and  (max-width: 960px){
+    .caixa-m-8{
+        float: none;
+        margin: auto;
+    }
+}
+@media(max-width: 480px){
+    .imagemNoticia{
+        height: 180px;
+    }
+}

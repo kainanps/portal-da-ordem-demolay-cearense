@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
+.restrito{
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,.5);
+}
+
+.decretos{
+    width: 100%;
+}
+
+.buttonEnviar{
+    width: 100%;
+    text-align: right;
+}
+
+.title-div{
+    width: 100%;
+    text-align: center;
+}
+
+.empty{
+    padding: 20px;
+    margin: 100px;
+    border-radius: 10px;
+    background-color: rgba(98, 98, 243, 0.678);
+    border: 1px solid rgba(0, 0, 0, 0.555);
+}
+
+.sumir{
+    animation: mudar .3s;
+    display: none;
+}
+
+.tituloDesc{
+    text-align: center;
+    border-bottom: .5px dashed black;
+    font-size: 17pt;
+    margin: 10px auto;
+}
+
+.inputCaixa{
+    border-bottom: solid 1px rgba(0,0,0,.5);
+    margin-bottom: 20px;
+}
+
+.inputTexto{
+    height: 25px;
+    display: block;
+    width: 90%;
+}
+
+label{
+    margin-top: 13px;
+    cursor: pointer;
+}
+
+::-webkit-file-upload-button{
+    background-color: rgb(50, 50, 150);
+    border: solid .5px rgba(0,0,0,.5);
+    border-radius: 2px;
+    padding: 5px;
+    color: white;
+}
+
+.fechando{
+    border: 1px solid white;
+    background-color: white;
+    box-shadow: 0px 0px 0px .5px rgba(0,0,0,.5);
+    border-radius: 45%;
+    background-color: black;
+    color: white;
+    margin-top: -32px;
+    margin-right: -25px;
+    line-height: 0;
+    float: right;
+    cursor: pointer;
+}
+
+.fechando i{
+    font-size: 15px;
+    text-align: center;
+}
+
+.download i{
+    color: black;
+    margin: 5px;
+    border-radius: 3px;
+    border: 1px solid black;
+    font-weight: bold;
+    transition: all .5s;
+}
+
+.download i:hover{
+    border: none;
+    text-shadow: 0 0 2px white;
+    font-size: 28px;
+}
+
+/* ------------- TABELA -------------- */
+
+.tTitle{
+    font-size: 14pt;
+    text-indent: 20px;
+    font-weight: bold;
+    max-width: 400px; 
+}
+
+
+/* ---------------- PAGINA DO ADMIN --------------- */
+.list{
+    display: inline-block;
+    border-right: 1px solid #3cba54;
+}
+
+.menuUl2{
+    position: absolute;
+    margin-left: -7px;
+    background-color: rgb(218, 218, 184);
+    list-style: none;
+}
+
+.list:hover .list2{
+    display: block;    
+}
+
+.list2{
+    display: none;
+    padding: 12px;
+}
+
+.list2:hover{
+    background-color: rgb(207, 207, 154);
+}
+
+.menuUl2 a{
+    color: rgb(1, 37, 1);    
+}
+
+.inputForm{
+    border-radius: 3px;
+    border: solid .5px rgba(0,0,0,.5);
+}
+
+.inputLabel, .inputForm{
+    display: block;
+    padding: 5px;
+    margin: 10px;
+}
+
+.arquivoConteudo{
+    height: 150px;
+    width: 90%;
+}
+
+.inputUsuario{
+    height: 30px;
+    width: 230px;
+}
+
+.formUsuario{
+    width: 250px;
+    margin: 0 auto;
+}
+/* ---------------- ANIMATION --------------- */
+
+@keyframes mudar{
+    from {
+        opacity: 0;
+        transform: translate3d(0,-60px,0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}
+
+/* --------------------AJUSTES DE TELA--------------------- */
+
+@media(min-width: 650px){    
+    .formAreaRestrita{
+        width: 600px;
+    }
+    
+    .formulario{
+        width: 600px;
+    }
+}
+@media(max-width: 560px){    
+    .restrito{
+        padding: 5px;
+    }
+
+    .fechando{
+        margin-right: -5px;
+        margin-top: -12px;
+    }
+
+    .title{
+        font-size: 12pt;
+    }
+    
+    input[type="file"]{
+        font-size: 8pt;
+    }
+}
